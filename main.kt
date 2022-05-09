@@ -36,6 +36,57 @@ fun main(){
     println("List: $oddNumbers")
     println("Sorted list: ${oddNumbers.sorted()}")
 
+
+
+    // listas mutables
     
+    // kotlin intenta inferir el tipo de dato de la lista
+    val entrees = mutableListOf<String>()
+
+    // o especificamos el tipo de dato de la variable donde se 
+    // almacenara la lista
+    val entrees2: MutableList<String> = mutableListOf()
+
+    // NOTA -> utilizamos val ya que la referencia a la lista
+    // nunca cambiara, lo que cambiara sera la lista en si.
+
+
+    // si se imprime una lista vacia de esta manera
+    println("Entrees: $entrees")
+    // la salida sera tal que Entrees: []
+
+
+    //Se agregan elementos utilizando el metodo add()
+    // esta funcion devuelve un valor booleano para la operación
+    println("Add noodles:  ${entrees.add("noodles")}")
+    println("Entrees: $entrees")
+
+
+    println("Add spaghetti: ${entrees.add("spaghetti")}")
+    println("Entrees: $entrees")
+
+    // para agregar varios elementos a la vez utilizamos addAll()
+    val moreItems = listOf("ravioli", "lasagna", "fettuccine")
+    println("Add list: ${entrees.addAll(moreItems)}")
+    println("Entrees: $entrees")
+
+
+    // Remove an item using remove()
+    println("Remove spaghetti: ${entrees.remove("spaghetti")}")
+    println("Entrees: $entrees")
+    println("Remove item that doesn't exist: ${entrees.remove("rice")}")
+    println("Entrees: $entrees")
+
+    // Remove an item using removeAt() with an index
+    println("Remove first element: ${entrees.removeAt(0)}")
+    println("Entrees: $entrees")
+
+    // Clear out the list
+    entrees.clear()
+    println("Entrees: $entrees")
+
+    // Check if the list is empty
+    println("Empty? ${entrees.isEmpty()}")
+
 
 }
